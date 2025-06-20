@@ -148,6 +148,14 @@
 <img src="./assets/images/screen10.png" alt="screen" width="900" />
 ---
 
+
+
+https://github.com/user-attachments/assets/95650f0f-49b7-47b1-a511-8296d6c1eec3
+
+
+
+---
+
 ## 🚀 실행 방법
 
 ```bash
