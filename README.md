@@ -157,3 +157,6 @@ npm i
 npm run dev
 # index.html 파일을 브라우저로 열면 실행됩니다.
 
+```
+
+![festory-_1_.gif](attachment:3309f363-ea25-447d-95d2-4434f3d16214:festory-_1_.gif)
