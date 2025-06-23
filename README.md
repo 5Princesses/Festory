@@ -163,5 +163,11 @@ git clone https://github.com/programmers-todoList/main
 cd main
 npm i
 npm run dev
-# index.html 파일을 브라우저로 열면 실행됩니다.
+# index.html 파일을 브라우저로 열면 실행됩니다.```
 
+
+---
+
+## 🤝 Contributing
+
+기여 방법은 [CONTRIBUTING.md](./CONTRIBUTING.md)를 참고해주세요.
