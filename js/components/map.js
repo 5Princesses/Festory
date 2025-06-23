@@ -58,12 +58,14 @@ export function isFocusMarker(data) {
     glyphColor: "white",
   });
   markers[data].content.replaceWith(pinFocused.element);
+  markers[data].zIndex = 5;
 }
 export function isDefaultMarker(data) {
   const pin = new PinElement({
     scale: 0.8,
   });
   markers[data].content.replaceWith(pin.element);
+  markers[data].zIndex = 0;
 }
 export function deleteMarkers() {
   Object.values(markers).forEach((marker) => {
