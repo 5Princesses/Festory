@@ -3,6 +3,19 @@
 }
 
 /* 햄버거 네비 */
+.fake-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  background: white;
+  padding: 5px 10px;
+  pointer-events: none;
+  color: #874fff;
+  font-weight: bold;
+  z-index: 9999;
+  opacity: 0;
+}
 .stripes {
   position: fixed;
   width: 0;
@@ -72,7 +85,9 @@
     width: 100%;
     opacity: 1;
     top: 50%;
-    transition: opacity 0.3s ease-in 0.5s, top 0.3s ease-in 0.6s;
+    transition:
+      opacity 0.3s ease-in 0.5s,
+      top 0.3s ease-in 0.6s;
   }
   .nav_list {
     position: absolute;
@@ -118,7 +133,8 @@
       color: #c6aff9;
     }
     &.disabled a:hover {
-      cursor: url("../assets/images/x_cursor.svg"), not-allowed;
+      /* cursor: url("../assets/images/x_cursor.svg"), not-allowed; */
+      cursor: none;
     }
   }
 }
@@ -131,7 +147,7 @@
   cursor: pointer;
   position: fixed;
   left: 100px;
-  top: 18px;
+  top: 10px;
   z-index: 9999;
   border-radius: 100%;
   width: 60px;
@@ -154,7 +170,9 @@
     width: 38px;
     height: 4px;
     border-radius: 3px;
-    transition: 0.25s margin 0.25s, 0.25s transform;
+    transition:
+      0.25s margin 0.25s,
+      0.25s transform;
   }
   span:nth-child(1) {
     margin-bottom: 8px;
@@ -167,7 +185,9 @@
     background-color: #000;
   }
   &.visible span {
-    transition: 0.25s margin, 0.25s transform 0.25s;
+    transition:
+      0.25s margin,
+      0.25s transform 0.25s;
   }
   &.visible span:nth-child(1) {
     margin-bottom: -4px;
@@ -183,22 +203,42 @@
 }
 
 /* 싱단 네비 */
+.header::before{
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.header.no-before::before{
+  display: none;
+}
+
+/* 싱단 네비 */
 .gnb {
   width: 100%;
   display: flex;
   justify-content: center;
   gap: 50px;
   position: fixed;
-  top: 40px;
+  top: 28px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 99;
-  .gnb_item.disabled a:hover {
-    cursor: url("../assets/images/x_cursor.svg"), not-allowed;
+  .gnb_item.disabled {
+    position: relative;
+    a:hover {
+      /* cursor: url("../assets/images/x_cursor.svg"), not-allowed; */
+      cursor: none;
+    }
   }
   a {
     position: relative;
-    font-size: 22px;
+    font-size: 1.15vw;
     color: #fff;
     transition: all 0.3s;
     &::before {
@@ -258,17 +298,18 @@
     left: 50%;
     top: 50%;
     translate: -50% -50%;
-    font-size: 150px;
+    font-size: 8vw;
     color: #fff;
+    text-shadow: -3px 3px 0 rgba(0, 0, 0, 0.1);
   }
   .sub_tit {
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 1.0vw;
     color: #874fff;
   }
   .visual_tit {
     margin-bottom: 80px;
-    font-size: 50px;
+    font-size: 2.7vw;
     font-weight: 600;
   }
   &.main_visual01 {
@@ -310,7 +351,7 @@
       gap: 30px;
       > li {
         width: calc(100% / 3 - 30px);
-        height: 450px;
+        height: 48.1vh;
         border-radius: 20px;
       }
     }
@@ -320,7 +361,8 @@
       display: flex;
       flex-direction: column;
       border-radius: 7px;
-      box-shadow: rgba(255, 255, 255, 0.3) 0 5vw 6vw -8vw,
+      box-shadow:
+        rgba(255, 255, 255, 0.3) 0 5vw 6vw -8vw,
         rgba(255, 255, 255, 0) 0 4.5vw 5vw -6vw,
         rgba(50, 50, 80, 0.5) 0px 4vw 8vw -2vw,
         rgba(0, 0, 0, 0.8) 0px 4vw 5vw -3vw;
@@ -359,7 +401,9 @@
     }
     .card:hover,
     .card:focus {
-      box-shadow: white 0 5vw 6vw -9vw, var(--highlight) 0 5.5vw 5vw -7.5vw,
+      box-shadow:
+        white 0 5vw 6vw -9vw,
+        var(--highlight) 0 5.5vw 5vw -7.5vw,
         rgba(50, 50, 80, 0.5) 0px 4vw 8vw -2vw,
         rgba(0, 0, 0, 0.8) 0px 4vw 5vw -3vw;
       .card_text {
@@ -397,12 +441,12 @@
     }
     .card span {
       display: inline-block;
-      font-size: 28px;
+      font-size: 1.6vw;
       font-weight: 600;
       margin-bottom: 15px;
     }
     .card p {
-      font-size: 18px;
+      font-size: 0.9vw;
       line-height: 1.4;
     }
     .card img {
@@ -442,10 +486,10 @@
       padding: 0 100px;
       line-height: 1.4;
       h3 {
-        font-size: 23px;
+        font-size: 1.2vw;
       }
       p {
-        font-size: 18px;
+        font-size:  0.9vw;
       }
       span {
         font-weight: 600;
@@ -484,7 +528,7 @@
     .goMap_btn {
       display: block;
       padding: 20px 30px;
-      font-size: 40px;
+      font-size: 2.2vw;
       font-family: "Russo One";
       text-align: center;
       color: #fff;
@@ -537,7 +581,7 @@
   justify-content: center;
   background-color: #eee;
   .inner {
-    padding: 250px 100px 100px 100px;
+    padding:  26.5vh 5.4vw 5.4vh 5.4vw;
     display: flex;
     gap: 50px;
     justify-content: center;
@@ -796,11 +840,11 @@
     .uhaUl {
       height: 350px;
     }
-    .festival-image-overlay{
-      width: 100%; 
+    .festival-image-overlay {
+      width: 100%;
       height: 30vh;
     }
-    .festival-info{
+    .festival-info {
       width: 100%;
       height: 350px;
     }
@@ -906,6 +950,7 @@
     }
   }
 }
+
 
 .no-results-alert {
   width: 100%;
